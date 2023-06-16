@@ -1,0 +1,78 @@
+/* Defines the grid container */
+.grid-container {
+    display: grid; /* Displays the container as a grid */
+    grid-template-areas:
+        "header header header header header header" /* Defines the grid areas for the rows */
+        "sidebar sidebar nav nav nav nav"
+        "sidebar sidebar article article article article"
+        "footer footer footer footer footer footer";
+    grid-gap: 10px; /* Sets the gap between grid items */
+    grid-template-rows: minmax(60px, auto) minmax(60px, auto) 1fr minmax(60px, auto); /* Defines the size range for grid rows */
+    grid-template-columns: minmax(200px, auto) repeat(5, minmax(120px, auto)); /* Defines the size range for grid columns */
+    width: 800px; /* Sets the width of the grid container */
+    margin: 0 auto; /* Centers the grid container horizontally (center) */
+    justify-content: center; /* Centers the content horizontally */
+}
+
+/* Styles for grid items */
+.grid-item {
+    text-align: center; /* Centers the text within grid items */
+    padding: 5px 0 20px 0; /* Sets the padding of grid items */
+    border-radius: 10px; /* Adds rounded corners to grid items */
+    color: #fff; /* Sets the text color to white */
+    font-family: Arial, sans-serif; /* Sets the font family */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 18px;
+    overflow: auto; /* Change screen size but content remains the same */
+    width: 100%; /* Needed for overflow */
+}
+
+/* Styles for specific grid items */
+#Header {
+    grid-area: header; /* Positions the item within the specified grid area */
+    background-color: #166057; /* Sets the background color */
+}
+
+#Sidebar {
+    grid-area: sidebar; /* Positions the item within the specified grid area */
+    background-color: #125a92; /* Sets the background color */
+}
+
+#Nav {
+    grid-area: nav; /* Positions the item within the specified grid area */
+    background-color: #6030d8; /* Sets the background color */
+}
+
+#Article {
+    grid-area: article; /* Positions the item within the specified grid area */
+    background-color: #7829c3; /* Sets the background color */
+}
+
+#Footer {
+    grid-area: footer; /* Positions the item within the specified grid area */
+    background-color: #393f4c; /* Sets the background color */
+}
+
+/* Styles for paragraphs within the article grid item */
+p {
+    font-size: 10px; /* Adjusts the font size */
+    font-weight: normal; /* Removes the bold style */
+    text-align: left; /* Aligns the text to the left */
+    padding:  0 10px 0 10px;/* Added padding left and right */
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 750px) {
+    .grid-item {
+        font-size: 10px;
+    }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .grid-item p{
+        font-size: 8px;
+    }
+}
+
