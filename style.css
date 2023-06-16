@@ -3,8 +3,8 @@
     display: grid; /* Displays the container as a grid */
     grid-template-areas:
         "header header header header header header" /* Defines the grid areas for the rows */
-        "sidebar sidebar nav nav nav nav"
-        "sidebar sidebar article article article article"
+        "sidebar nav nav nav nav nav"
+        "sidebar article article article article article"
         "footer footer footer footer footer footer";
     grid-gap: 10px; /* Sets the gap between grid items */
     grid-template-rows: minmax(60px, auto) minmax(60px, auto) 1fr minmax(60px, auto); /* Defines the size range for grid rows */
@@ -17,7 +17,7 @@
 /* Styles for grid items */
 .grid-item {
     text-align: center; /* Centers the text within grid items */
-    padding: 5px 0 20px 0; /* Sets the padding of grid items */
+    padding: 5px 0 10px 0; /* Sets the padding of grid items */
     border-radius: 10px; /* Adds rounded corners to grid items */
     color: #fff; /* Sets the text color to white */
     font-family: Arial, sans-serif; /* Sets the font family */
@@ -55,7 +55,7 @@
 
 /* Styles for paragraphs within the article grid item */
 p {
-    font-size: 10px; /* Adjusts the font size */
+    font-size: 14px; /* Adjusts the font size */
     font-weight: normal; /* Removes the bold style */
     text-align: left; /* Aligns the text to the left */
     padding:  0 10px 0 10px;/* Added padding left and right */
@@ -63,15 +63,21 @@ p {
 
 
 /* Media query for smaller screens */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 550px) {
     .grid-item {
-        font-size: 10px;
+        font-size: 15px;
+    }
+    p {
+        font-size: 12px;
     }
 }
 
 /* Media query for even smaller screens */
-@media screen and (max-width: 480px) {
-    .grid-item p{
+@media screen and (max-width: 400px) {
+    .grid-item {
+        font-size: 12px;
+    }
+    p {
         font-size: 8px;
     }
 }
